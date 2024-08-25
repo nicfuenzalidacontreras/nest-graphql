@@ -5,8 +5,8 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { GqlExecutionContext } from '@nestjs/graphql';
-import { ValidRoles } from '../enums/valid-roles.enum';
 import { User } from '../../users/entities/user.entity';
+import { ValidRoles } from '../enums/valid-roles.enum';
 
 export const CurrentUser = createParamDecorator(
   (roles: ValidRoles[] = [], context: ExecutionContext) => {
@@ -22,7 +22,7 @@ export const CurrentUser = createParamDecorator(
     if (roles.length === 0) return user;
 
     for (const role of user.roles) {
-      //TODO: Eliminar Valid Roles
+      // TODO: Eliminar Valid Roles
       if (roles.includes(role as ValidRoles)) {
         return user;
       }
