@@ -2,7 +2,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 
 import { ItemsService } from './items.service';
-import { ItemsResolver } from './items.resolver';
+import { ItemsResolver } from './item.resolver';
 import { Item } from './entities/item.entity';
 
 @Module({
